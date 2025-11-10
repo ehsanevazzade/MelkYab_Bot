@@ -1,0 +1,12 @@
+# render.yaml
+services:
+  - type: web
+    name: melk-yab-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    plan: free
+    autoDeploy: true
+    envVars:
+      BOT_TOKEN:
+        fromSecret: BOT_TOKEN
